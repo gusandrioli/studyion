@@ -2,3 +2,6 @@
 
 <p><%= @post.body %></p>
 
+<%= link_to 'Edit Post', edit_post_path(@post), class: "btn btn-primary btn-xs" %>
+<%= link_to 'Delete Post', post_path(@post),  class: "btn btn-danger btn-xs", method: :delete, data: {confirm: 'Are you sure?'} %>
+
