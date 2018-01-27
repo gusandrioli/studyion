@@ -1,0 +1,9 @@
+<h1>Posts#index</h1>
+
+<% @posts.each do |post| %>
+  <div class="well col-md-6">
+    <h4><%= post.title %></h4>
+    <p><%= post.body %></p>
+    <%= link_to 'View full Post', post_path(post) %>    
+  </div>
+<% end %>
