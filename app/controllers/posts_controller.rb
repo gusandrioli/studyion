@@ -41,7 +41,7 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :body)
     end
     def require_same_user
-      if current_user != @post.user 
+      if current_user != @post.user and !current_user.admin?
         redirect_to posts_path
       end
     end
