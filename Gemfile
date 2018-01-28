@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'font-awesome-rails'
+gem 'will_paginate', '3.1.5'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
