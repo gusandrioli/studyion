@@ -1,20 +1,24 @@
-<div class="navbar navbar-default navbar-static-top">
+<div class="navbar navbar-default navbar-static-top navbar-expand-md">
       <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/" id="logo">NoteTakingApp</a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/" id="logo">NoteTakingApp</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "See all Posts", posts_path, class: "links"%></li>
-            <li><%= link_to "Add Post", new_post_path, class: "links"  %></li>
+            <% if current_user %>
+              <li><%= link_to "See all Posts", posts_path, class: "links"%></li>
+              <li><%= link_to "Add Post", new_post_path, class: "links"  %></li>
+            <% end %>
           </ul>
           <ul class="nav navbar-right col-md-4">
           <li class="col-md-8 user-name text-right">
           </li>
-          <li class="col-md-4 logout"><%= link_to("Logout", destroy_user_session_path, class: "btn bnt-xs btn-danger",
+          <li class="col-md-4 logout"><%= link_to("Logout", destroy_user_session_path, class: "btn bnt-xs btn-danger ",
                                          method: :delete)%></li>
         </ul>
         </div>     
