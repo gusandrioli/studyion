@@ -1,0 +1,9 @@
+<% obj.each do |post| %>
+  <div class="well col-md-12">
+    <h4><%= post.title %></h4>
+    <p><%= post.body %></p>
+    <p>Posted by <%= post.user.first_name %>, <%= time_ago_in_words(post.created_at)%> ago,
+                        last updated: <%=time_ago_in_words(post.updated_at)%> ago</p>
+    <%= link_to 'View full Post', post_path(post) %>    
+  </div>
+<% end %>
