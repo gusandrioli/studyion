@@ -34,8 +34,8 @@
               <%= current_user.full_name %>
             </h3>
             <ul class="nav nav-list">
-              <li><%= link_to "My Profile", user_path(current_user)  %></li>
-              <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+              <li><%= link_to "My Profile", user_path(current_user), class: "links"  %></li>
+              <li><%= link_to "Edit Profile", edit_user_registration_path, class: "links" %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->

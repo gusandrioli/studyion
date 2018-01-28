@@ -33,3 +33,25 @@
       background-color: darken(#d9534f, 20%) !important;
   }
 }
+
+.jumbotron {
+  background-image: url(https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=760ab110f83ece279beb345a4443f0e4);
+  background-size: cover;
+  background-position: 0%;
+  height: 600px;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #000;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.links {
+  font-size: 1.2em;
+  color: #000;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
