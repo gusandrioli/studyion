@@ -10,10 +10,12 @@ end
 gem 'rails', '~> 5.1.4'
 gem 'devise'
 gem 'jquery-rails'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '~> 3.2.2'
 gem 'devise-bootstrap-views'
 gem 'font-awesome-rails'
 gem 'will_paginate', '3.1.5'
+gem 'bootstrap-sass', '~> 3.3.7'
+
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

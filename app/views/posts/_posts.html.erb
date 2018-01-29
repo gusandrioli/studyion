@@ -4,6 +4,13 @@
     <p><%= post.body %></p>
     <p>Posted by <%= post.user.first_name %>, <%= time_ago_in_words(post.created_at)%> ago,
                         last updated: <%=time_ago_in_words(post.updated_at)%> ago</p>
-    <%= link_to 'View full Post', post_path(post) %>    
+      <% if post.subjects.any? %>
+        <p>Subjects: 
+            <% post.subjects.each do |s| %>
+              <%= link_to s.name, subject_path(s), class: "badge" %>
+            <% end %>                            
+        </p>
+      <% end %> 
+    <%= link_to 'View full Post', post_path(post), class: "btn btn-xs btn-primary" %>    
   </div>
 <% end %>

@@ -38,7 +38,7 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, subject_ids: [])
     end
     def require_same_user
       if current_user != @post.user and !current_user.admin?
