@@ -1,6 +1,6 @@
 <% obj.each do |subject| %>
   <div class="well  col-md-12">
-    <h4><%= link_to subject.name, subject_path(subject) %></h4>
+    <h4 class="post-title"><%= link_to subject.name, subject_path(subject) %></h4>
     <p><%= pluralize(subject.posts.count, "post")%></p>
     <% if current_user.admin? %>
       <%= link_to 'Edit', edit_subject_path(subject), class: "btn btn-xs btn-warning" %>   

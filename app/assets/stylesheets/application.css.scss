@@ -67,11 +67,10 @@
   font-weight: bold; 
   text-decoration: underline;
   text-transform: capitalize;
-
 }
 
 .badge{
-  background-color: rgb(13, 87, 184);
+  background-color: rgb(184, 13, 13);
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
@@ -80,4 +79,15 @@
 .checkbox-inline {
   font-weight: bold;
   text-decoration: underline;
+}
+
+.post-title{
+  font-weight: bold;
+  text-transform: capitalize;
+  font-family: 'Lobster', cursive;
+  font-size: 1.7em;
+}
+
+.post-body{
+  font-size: 1.1em;
 }

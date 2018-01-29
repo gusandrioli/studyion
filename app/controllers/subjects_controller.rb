@@ -10,6 +10,7 @@ class SubjectsController < ApplicationController
   def create
     @subject = Subject.new(subject_params) 
     if @subject.save
+      flash[:success] = "Subject was successfully created"
       redirect_to subject_path(@subject)
     else
       render 'new'
@@ -21,6 +22,7 @@ class SubjectsController < ApplicationController
   end
   def update
     if @subject.update(subject_params)
+      flash[:success] = "Subject was successfully updated"
       redirect_to subject_path(@subject)
     else
       render 'edit'
@@ -28,6 +30,7 @@ class SubjectsController < ApplicationController
   end
   def destroy
     if @subject.destroy
+      flash[:danger] = "Subject was destroyed"
       redirect_to subjects_path
     end
   end
@@ -41,6 +44,7 @@ class SubjectsController < ApplicationController
     end
     def require_admin
       if !current_user.admin?
+        flash[:danger] = "Only admin can perform that action"
         redirect_to subjects_path
       end
     end

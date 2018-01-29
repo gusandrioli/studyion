@@ -11,6 +11,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
+      flash[:success] = "Note was successfully created"
       redirect_to post_path(@post)
     else
       render 'new'
@@ -22,6 +23,7 @@ class PostsController < ApplicationController
   end
   def update
     if @post.update(post_params)
+      flash[:success] = "Note was successfully updated"
       redirect_to post_path(@post)
     else
       render 'edit'
@@ -29,6 +31,7 @@ class PostsController < ApplicationController
   end
   def destroy
     if @post.destroy
+      flash[:danger] = "Note was destroyed"
       redirect_to posts_path
     end
   end
@@ -42,6 +45,7 @@ class PostsController < ApplicationController
     end
     def require_same_user
       if current_user != @post.user and !current_user.admin?
+        flash[:danger] = "You can only edit or delete your own article"
         redirect_to posts_path
       end
     end
