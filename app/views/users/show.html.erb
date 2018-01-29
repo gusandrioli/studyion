@@ -1,4 +1,8 @@
 <h1><%= @user.full_name %>'s Profile</h1>
 <h4><%= @user.email %></h4>
 
-<%= render 'posts/posts', obj: @user.posts %>
+<%= render 'posts/posts', obj: @user_posts %>
+
+<div class="center">
+    <%= will_paginate @user_posts %>
+</div>
