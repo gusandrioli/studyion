@@ -10,7 +10,10 @@ class User < ApplicationRecord
                       uniqueness: {case_sensitive: false},
                       format: { with: VALID_EMAIL_REGEX}
   has_many :posts
-  has_many :comments                      
+  has_many :comments     
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+  validates :avatar, presence: true
 
   def full_name
     return "#{first_name} #{last_name}".strip if (first_name || last_name)
