@@ -33,6 +33,9 @@
       background-color: darken(#d9534f, 20%) !important;
   }
 }
+.welcome-header{
+  color: #fff;
+}
 
 .jumbotron {
   background-image: url(https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=760ab110f83ece279beb345a4443f0e4);
@@ -40,6 +43,8 @@
   background-position: 0%;
   height: 600px;
 }
+
+
 
 #logo {
   float: left;
@@ -67,6 +72,7 @@
   font-weight: bold; 
   text-decoration: underline;
   text-transform: capitalize;
+
 }
 
 .badge{
@@ -90,4 +96,29 @@
 
 .post-body{
   font-size: 1.1em;
+}
+
+.comments_title {
+  margin-top: 2em;
+}
+
+#comments {
+  .comment {
+    padding: 1em 0;
+    border-top: 1px solid #E9E9E9;
+    .lead {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.sidebar-nav {
+  margin: 100px 50px 0px 30px;
+  padding: 22px;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
