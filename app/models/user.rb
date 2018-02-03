@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   validates :avatar, presence: true
+  validates :image, presence: true
 
   def full_name
     return "#{first_name} #{last_name}".strip if (first_name || last_name)
