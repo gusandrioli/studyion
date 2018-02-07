@@ -22,6 +22,7 @@
               <% if current_user.admin? %>
                 <li><%= link_to "Add Subject", new_subject_path, class: "links" %></li>
               <% end %>
+              <li><%= link_to "All Users", users_path, class: "links"  %></li>
           </ul>
           <ul class="nav navbar-right col-md-4">
             <li class="col-md-8 user-name text-right"></li>

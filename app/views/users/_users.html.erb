@@ -1,0 +1,6 @@
+<% obj.each do |user| %>
+  <div class="well  col-md-12">
+    <h4 class="post-title"><%= link_to user.full_name, user_path(user) %></h4>
+    <p><%= pluralize(user.posts.count, "post")%></p>
+  </div>
+<% end %>
