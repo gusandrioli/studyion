@@ -6,5 +6,9 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: {minimum: 3, maximum: 50}
   validates :body, presence: true, length: {minimum: 10, maximum: 2000}
   validates :user_id, presence: true
+
+  def html_body
+    self.body.split("\n").join("<br/>").html_safe
+  end
 end
 

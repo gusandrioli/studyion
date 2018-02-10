@@ -10,11 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require devise_bootstrap_views
  *= require font-awesome
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
 
  .logout{
   padding-left: 0;
@@ -113,14 +115,14 @@
 }
 
 .sidebar-nav {
-  margin: 100px 50px 0px 30px;
+  margin-top: 20px;
   padding: 22px;
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  right: 0;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  // position: fixed; /* Stay in place */
+  // z-index: 1; /* Stay on top */
+  // top: 0; /* Stay at the top */
+  // right: 0;
+  // overflow-x: hidden; /* Disable horizontal scroll */
+  // transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
 .profile-image{

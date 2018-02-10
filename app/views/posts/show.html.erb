@@ -1,7 +1,7 @@
 <h1 align="center"><%= @post.title %></h1>
 <div class="show-container">
-  <div class="well">
-    <text><%= @post.body %></text>
+  <div class="well col-md-12">
+    <text><%= @post.html_body %></text1>
     <p>Posted by: <%= link_to @post.user.full_name, user_path(@post.user)%></p>
     <% if @post.subjects.any? %>
         <p>Subjects: 
