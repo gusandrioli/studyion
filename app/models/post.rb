@@ -7,8 +7,13 @@ class Post < ApplicationRecord
   validates :body, presence: true, length: {minimum: 10, maximum: 2000}
   validates :user_id, presence: true
 
+  def body_lines
+    self.body.split("\n")
+  end
+
   def html_body
     self.body.split("\n").join("<br/>").html_safe
   end
+
 end
 
