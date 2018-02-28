@@ -11,7 +11,9 @@ class User < ApplicationRecord
                       uniqueness: {case_sensitive: false},
                       format: { with: VALID_EMAIL_REGEX}
   has_many :posts
-  has_many :comments     
+  has_many :comments
+  has_many :assignments
+  has_many :roles, through: :assignments     
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   validates :image, presence: true
@@ -19,6 +21,10 @@ class User < ApplicationRecord
   def full_name
     return "#{first_name} #{last_name}".strip if (first_name || last_name)
     "Anonymous"
+  end
+
+  def role?(role)
+    roles.any? { |r| r.name.underscore.to_sym == role }
   end
   
 end
