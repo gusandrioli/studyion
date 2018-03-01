@@ -4,6 +4,9 @@
     <p class="post-body"><%=truncate(post.body, length: 400)%></p>
     <p>Posted by <%= link_to post.user.first_name, user_path(post.user) %>, <%= time_ago_in_words(post.created_at)%> ago,
                         last updated: <%=time_ago_in_words(post.updated_at)%> ago</p>
+    <% if post.file? %>
+      <%= link_to "See Attachment", post.file.url, target: :_blank %>
+    <% end %>
       <% if post.subjects.any? %>
         <p>Subjects: 
             <% post.subjects.each do |s| %>
