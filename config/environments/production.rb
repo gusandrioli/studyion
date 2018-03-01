@@ -61,7 +61,6 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "note-taking-app_#{Rails.env}"
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { :host => "https://note-taking-app-gusandrioli.herokuapp.com/" }
 
 
   # Ignore bad email addresses and do not raise email delivery errors.
