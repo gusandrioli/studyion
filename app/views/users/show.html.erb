@@ -1,5 +1,5 @@
 <div align="center">
-    <%= image_tag @user.picture.url, class: "thumbnail profile-image"  if @user.picture? %>
+    <%= image_tag @user.picture.url, class: "thumbnail profile-image" if @user.picture? %>
     <h1 class="index-header"><%= @user.full_name %></h1>
     <h4><%= @user.email %></h4>
     <td><%#= link_to "Download Profile Pic", @user.picture.url, target: :_blank %></td>
