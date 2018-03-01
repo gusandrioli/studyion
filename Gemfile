@@ -18,6 +18,9 @@ gem 'simple_form', '~> 3.5'
 gem 'record_tag_helper', '~> 1.0'
 gem "paperclip", "~> 5.2.1"
 gem "pundit"
+gem 'carrierwave', '~> 1.0'
+gem 'fog'
+gem 'mini_magick'
 
 
 # Use Puma as the app server

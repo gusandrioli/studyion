@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :assignments
   has_many :roles, through: :assignments     
+  mount_uploader :picture, PictureUploader
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   validates :image, presence: true
