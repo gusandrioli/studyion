@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :tasks
   resources :comments
   get 'subjects/index'
 
