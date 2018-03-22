@@ -2,6 +2,7 @@
 	width: 360px;
 	box-shadow: 0 0 3px rgba(0,0,0, 0.1);
 	background: #f7f7f7;
+	padding: 0;
 }
 .completed {
 	color: gray;
@@ -64,4 +65,13 @@ li:nth-child(2n){
 }
 strong{
 	font-size: 15px;
+}
+#calendar {
+	width: 38%;
+	box-shadow: 0 0 3px rgba(0,0,0, 0.1);
+	background: #f7f7f7;
+	margin-left: 25px;	
+}
+#task-row{
+	padding-top: 10px;
 }

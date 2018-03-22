@@ -1,22 +1,29 @@
-
-<div id="container">
-  <h1 class="task-h1">To-Do List <i class="fa fa-pencil-square-o"></i> </h1>
-  <% @tasks.each do |task| %>
-    <% if current_user == task.user %>
-      <ul id="task-ul">
-        <li id="task-li"><span><%= link_to '<i class="fa fa-trash"></i>'.html_safe, task, class: "li-icon", method: :delete %></span><strong><%= task.task %></strong></li>
-      </ul>
-    <% end %>
-  <% end %>
-  <%= simple_form_for [@task, Task.new]  do |f| %>
-    <div class="form-inline field" id="field">
-      <%#= f.label :task %>
-      <%= f.text_field :task, class: "form-control", placeholder: "Task..." %>
-      <%= f.submit "Add Task", class: "btn btn-primary pull-right" %>      
+<div class="container">
+  <div class="row" id="task-row">
+    <div id="container" class="col-xs-3">
+      <h1 class="task-h1">To-Do List <i class="fa fa-pencil-square-o"></i> </h1>
+      <% @tasks.each do |task| %>
+        <% if current_user == task.user %>
+          <ul id="task-ul">
+            <li id="task-li"><span><%= link_to '<i class="fa fa-trash"></i>'.html_safe, task, class: "li-icon", method: :delete %></span><strong><%= task.task %></strong></li>
+          </ul>
+        <% end %>
+      <% end %>
+      <%= simple_form_for [@task, Task.new]  do |f| %>
+        <div class="form-inline field" id="field">
+          <%#= f.label :task %>
+          <%= f.text_field :task, class: "form-control", placeholder: "Task..." %>
+          <%= f.submit "Add Task", class: "btn btn-primary pull-right" %>      
+        </div>
+        <br>
+      <% end %>
     </div>
-    <br>
-  <% end %>
+    <div id="calendar" class="col-sm-12"></div> 
+  </div>
 </div>
+
+
+
 
 
 <%#= link_to 'Destroy', task, class: "btn btn-xs btn-danger pull-right", method: :delete, data: { confirm: 'Are you sure?' } %>
