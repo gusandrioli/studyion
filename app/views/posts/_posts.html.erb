@@ -1,19 +1,23 @@
 <% obj.each do |post| %>
-  <div class="well  col-md-12">
-    <h4 class="post-title"><%= post.title %></h4>
-    <p class="post-body"><%=truncate(post.body, length: 400)%></p>
-    <p>Posted by <%= link_to post.user.first_name, user_path(post.user) %>, <%= time_ago_in_words(post.created_at)%> ago,
-                        last updated: <%=time_ago_in_words(post.updated_at)%> ago</p>
-    <% if post.file? %>
-      <%= link_to "See Attachment", post.file.url, target: :_blank %>
-    <% end %>
-      <% if post.subjects.any? %>
-        <p>Subjects: 
-            <% post.subjects.each do |s| %>
-              <%= link_to s.name, subject_path(s), class: "badge" %>
-            <% end %>                            
-        </p>
-      <% end %> 
-    <%= link_to 'View full Post', post_path(post), class: "btn btn-xs btn-primary" %>    
-  </div>
+  <% if post.user.isteacher == false %>
+    <div class="well col-md-12">
+  <% else %>
+    <div class="well col-md-12" id="teacher-well">
+  <% end %>
+      <h4 class="post-title"><%= post.title %></h4>
+      <p class="post-body"><%=truncate(post.body, length: 400)%></p>
+      <p>Posted by <%= link_to post.user.first_name, user_path(post.user) %>, <%= time_ago_in_words(post.created_at)%> ago,
+                          last updated: <%=time_ago_in_words(post.updated_at)%> ago</p>
+      <% if post.file? %>
+        <%= link_to "See Attachment", post.file.url, target: :_blank %>
+      <% end %>
+        <% if post.subjects.any? %>
+          <p>Subjects: 
+              <% post.subjects.each do |s| %>
+                <%= link_to s.name, subject_path(s), class: "badge" %>
+              <% end %>                            
+          </p>
+        <% end %> 
+      <%= link_to 'View full Post', post_path(post), class: "btn btn-xs btn-primary" %>    
+    </div>
 <% end %>
