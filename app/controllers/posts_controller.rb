@@ -2,7 +2,12 @@ class PostsController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_same_user, only: [:edit, :update, :destroy]
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 5)
+    # @posts = Post.search(params).paginate(page: params[:page], per_page: 5)
+    if params[:search]
+      @posts = Post.where('title LIKE ?', "%#{params[:search]}%").paginate(page: params[:page], per_page: 5)
+    else
+      @posts = Post.paginate(page: params[:page], per_page: 5)
+    end
   end
   def new
     @post = Post.new

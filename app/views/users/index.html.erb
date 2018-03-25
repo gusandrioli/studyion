@@ -1,5 +1,12 @@
 <h1 class="index-header">All Users</h1>
 
+<%= form_tag users_path, :html => {class: "form-horizontal", role: "form"}, :method => 'get' do %>
+	<div class="form-group">
+			<%= text_field_tag :search, params[:search], placeholder: "User Name or Email..." %>
+			<%= submit_tag "Search", :name => nil, class: "btn btn-xs btn-default" %>
+	</div>
+<% end %>
+
 <%= render 'users', obj: @users %>
 
 <div align="center">
