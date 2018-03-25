@@ -75,8 +75,6 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    countdown (0.1.0)
-      json
     crass (1.0.3)
     devise (4.3.0)
       bcrypt (~> 3.0)
@@ -422,7 +420,6 @@ DEPENDENCIES
   capybara (~> 2.13)
   carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
-  countdown
   devise
   fog
   font-awesome-rails
