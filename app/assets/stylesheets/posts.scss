@@ -4,5 +4,36 @@
 
 
 #teacher-well{
-  border: 2px #a15239 solid;
+  background: rgba(74, 157, 224, 0.425);
+
+}
+
+.post-meta-details {
+  border-top: 1px solid #eaeaea;
+  margin-top: 15px; 
+}
+
+.post-actions{
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+}
+
+.post-subjects{
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.post-title{
+  font-weight: bold;
+  font-size: 1.7em;
+  text-transform: capitalize;
+  font-family: 'Lobster', cursive;
+}
+
+.post-body{
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+  padding-bottom: 5px; 
+  font-size: 1.1em;
 }

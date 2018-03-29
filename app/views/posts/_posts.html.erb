@@ -1,23 +1,25 @@
 <% obj.each do |post| %>
   <% if post.user.isteacher == false %>
-    <div class="well col-md-12">
+    <div class="well well-lg col-md-12">
   <% else %>
     <div class="well col-md-12" id="teacher-well">
   <% end %>
       <h4 class="post-title"><%= post.title %></h4>
       <p class="post-body"><%=truncate(post.body, length: 400)%></p>
-      <p>Posted by <%= link_to post.user.first_name, user_path(post.user) %>, <%= time_ago_in_words(post.created_at)%> ago,
-                          last updated: <%=time_ago_in_words(post.updated_at)%> ago</p>
+      <div class="post-meta-details"><small>Posted by <%= link_to post.user.first_name, user_path(post.user) %>, <%= time_ago_in_words(post.created_at)%> ago,
+                          last updated: <%=time_ago_in_words(post.updated_at)%> ago</small></div>
       <% if post.file? %>
         <%= link_to "See Attachment", post.file.url, target: :_blank %>
       <% end %>
         <% if post.subjects.any? %>
-          <p>Subjects: 
+          <div class="post-subjects">Subjects: 
               <% post.subjects.each do |s| %>
                 <%= link_to s.name, subject_path(s), class: "badge" %>
               <% end %>                            
-          </p>
+          </div>
         <% end %> 
-      <%= link_to 'View full Post', post_path(post), class: "btn btn-xs btn-primary" %>    
+      <div class="post-actions">
+        <%= link_to 'View full Post', post_path(post), class: "btn btn-xs btn-primary" %>    
+      </div>
     </div>
 <% end %>
