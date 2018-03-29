@@ -29,11 +29,18 @@
             <li class="col-md-8 user-name text-right"></li>
             <li class="col-md-4 logout">
               <%= link_to('<i class="fa fa-sign-out" aria-hidden="true"></i>
- Logout'.html_safe, destroy_user_session_path, class: "btn bnt-xs btn-danger",
+ Logout'.html_safe, destroy_user_session_path, class: "btn btn-danger",
                                          method: :delete)%>
             </li>
           </ul>
-          <% end %>          
+          <% else %>   
+            <ul class="nav navbar-right col-md-4">
+              <li class="col-md-6 pull-right logout">
+                <%= link_to 'Login', new_user_session_path, class: "btn btn-success" %>
+              </li>
+            </ul>
+          <% end %>
+
         </div>     
         
       </div>
