@@ -1,0 +1,10 @@
+<h1 class="index-header">Q&A</h1>
+
+<%= render 'questions', obj: @questions %>
+
+<%= link_to 'New Question', new_question_path %>
+
+<div align="center">
+    <%= will_paginate %>
+</div>
+

@@ -1,0 +1,18 @@
+<% obj.each do |q| %>
+    <div class="well well-lg col-md-12">
+      <h4 class="question-title"><%= q.title %></h4>
+      <p class="question-body"><%=truncate(q.body, length: 400)%></p>
+      <div class="question-meta-details"><small>Posted by <%= link_to q.user.first_name, user_path(q.user) %>, <%= time_ago_in_words(q.created_at)%> ago,
+                          last updated: <%=time_ago_in_words(q.updated_at)%> ago</small></div>
+      <% if q.subjects.any? %>
+        <div class="post-subjects">Subjects: 
+          <% q.subjects.each do |s| %>
+            <%= link_to s.name, subject_path(s), class: "badge" %>
+          <% end %>                            
+        </div>
+      <% end %> 
+      <div class="question-actions">
+        <%= link_to 'View full question', question_path(q), class: "btn btn-xs btn-primary" %>    
+      </div>
+    </div>
+<% end %> 

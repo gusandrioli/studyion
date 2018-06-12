@@ -16,7 +16,7 @@
           <ul class="nav navbar-nav">
               <li><%= link_to "See all Notes", posts_path, class: "links"%></li>
               <li>
-                <%= link_to 'Add Note', new_post_path, class: "links"  %>
+                <%= link_to 'Q&A', questions_path, class: "links"  %>
               </li>
               <li><%= link_to "Subjects", subjects_path, class: "links"  %></li>
               <% if current_user.admin? %>
