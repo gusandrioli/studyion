@@ -1,7 +1,11 @@
 <h1 class="index-header">List of all Subjects</h1>
 
-<%= render 'subjects', obj: @subjects %>
 
+<% if current_user.admin? %>
+    <div class="btn btn-default btn-lg"><%= link_to "Add Subject", new_subject_path, class: "links" %></div>
+<% end %>
+
+<%= render 'subjects', obj: @subjects %>
 
 <div align="center">
     <%= will_paginate %>

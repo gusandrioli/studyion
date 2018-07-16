@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :questions
   has_many :tasks
   has_many :comments
+  has_many :answers
   has_many :assignments
   has_many :roles, through: :assignments     
   mount_uploader :picture, PictureUploader

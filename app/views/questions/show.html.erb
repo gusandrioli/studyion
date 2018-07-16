@@ -1,19 +1,34 @@
-<p id="notice"><%= notice %></p>
+<h1 align="center"><%= @question.title %></h1>
+<div class="show-container">
+  <div class="well col-md-12">
+    <% @question.body_lines.each do |line| %>
+      <text><%= line %></text><br/>
+    <% end %>
+    <p>Posted by: <%= link_to @question.user.full_name, user_path(@question.user)%></p>
+    <% if @question.subjects.any? %>
+        <p>Subjects: 
+            <% @question.subjects.each do |s| %>
+              <%= link_to s.name, subject_path(s), class: "badge" %>
+            <% end %>                            
+        </p>
+      <% end %> 
+    <% if current_user.id == @question.user_id || current_user.admin? %>
+      <%= link_to 'Edit Question', edit_question_path(@question), class: "btn btn-primary btn-xs" %>
+      <%= link_to 'Delete Question', question_path(@question),  class: "btn btn-danger btn-xs", method: :delete, data: {confirm: 'Are you sure?'} %>
+    <% end %>
+  </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @question.title %>
-</p>
+  <h3 class="comments_title">
+    <%= @question.answers.count %> Answers
+  </h3>
 
-<p>
-  <strong>Body:</strong>
-  <%= @question.body %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @question.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+  <div id="comments">
+    <%= render :partial => @question.answers %>
+  </div>
+  <%= simple_form_for [@question, Answer.new]  do |f| %>
+    <div class="field">
+      <%= f.text_area :body, class: "form-control" %>
+    </div>
+    <br>
+    <%= f.submit "Add Answer", class: "btn btn-primary" %>
+  <% end %>  
