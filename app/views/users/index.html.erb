@@ -2,8 +2,8 @@
 
 <%= form_tag users_path, :html => {class: "form-horizontal", role: "form"}, :method => 'get' do %>
 	<div class="form-group">
-			<%= text_field_tag :search, params[:search], placeholder: "User Name or Email..." %>
-			<%= submit_tag "Search", :name => nil, class: "btn btn-xs btn-default" %>
+			<%= text_field_tag :search, params[:search], id: "search-form", class:"form-control", placeholder: "Type Name or Email here" %>
+			<%= submit_tag "Search", :name => nil, class: "btn btn-default" %>
 	</div>
 <% end %>
 
