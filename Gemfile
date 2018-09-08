@@ -21,8 +21,8 @@ gem "pundit"
 gem 'carrierwave', '~> 1.0'
 gem 'fog'
 gem 'mini_magick'
-gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem "simple_calendar", "~> 2.0"
 
 
 # Use Puma as the app server

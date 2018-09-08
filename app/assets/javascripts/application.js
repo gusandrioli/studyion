@@ -16,13 +16,4 @@
 //= require turbolinks
 //= require_tree .
 //= require moment 
-//= require fullcalendar
-
-
-$(document).ready(function() {
-  // page is now ready, initialize the calendar...
-  $('#calendar').fullCalendar({
-    aspectRatio: 2      
-  })
-});
 

@@ -18,7 +18,11 @@
         <br>
       <% end %>
     </div>
-    <div id="calendar" class="col-sm-12"></div> 
+    <div class="col-xs-5" id="calendar">
+      <%= month_calendar do |date| %>
+        <%= date.day %>
+      <% end %>
+    </div>
   </div>
   <script type="text/javascript">
     var timer = new Timer();
