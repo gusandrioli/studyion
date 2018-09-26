@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     if params[:search]
       @posts = Post.where('title LIKE ?', "%#{params[:search]}%").paginate(page: params[:page], per_page: 5)
     else
-      @posts = Post.paginate(page: params[:page], per_page: 5)
+      @posts = Post.order("updated_at DESC").paginate(page: params[:page], per_page: 5)
     end
   end
   def new
