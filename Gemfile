@@ -14,7 +14,7 @@ gem 'sass-rails', '>= 3.2'
 gem 'font-awesome-rails'
 gem 'will_paginate', '3.1.5'
 gem 'bootstrap-sass', '~> 3.3.7'
-gem 'simple_form', '~> 3.5'
+gem 'simple_form', '~> 5.0'
 gem 'record_tag_helper', '~> 1.0'
 gem "paperclip", "~> 5.2.1"
 gem "pundit"
