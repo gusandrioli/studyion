@@ -18,7 +18,7 @@ gem 'simple_form', '~> 5.0'
 gem 'record_tag_helper', '~> 1.0'
 gem "paperclip", "~> 5.2.1"
 gem "pundit"
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'fog'
 gem 'mini_magick'
 gem 'momentjs-rails'
